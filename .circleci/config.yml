@@ -10,7 +10,7 @@ branches_only: &branches_only
 jobs:
   build:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: circleci/buildpack-deps:stretch
     working_directory: ~/app
     steps:
       - checkout
@@ -22,7 +22,7 @@ jobs:
 
   publish:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: circleci/buildpack-deps:stretch
     steps:
       - setup_remote_docker
       - run:
